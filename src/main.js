@@ -16,19 +16,23 @@ var router = new VueRouter()
 
 router.map({
 
+  '/': {
+    component: require('./components/index.vue')
+  },
+  '*': {
+    component: require('./components/404.vue')
+  },
+
+});
+
+router.map({
+
   '/users': {
     component: require('./components/users/index.vue')
   },
 
   '/users/login': {
     component: require('./components/users/login.vue')
-  },
-
-  '/': {
-    component: require('./components/index.vue')
-  },
-  '*': {
-    component: require('./components/404.vue')
   },
 
 });

@@ -62,19 +62,23 @@
 	
 	router.map({
 	
+	  '/': {
+	    component: __webpack_require__(92)
+	  },
+	  '*': {
+	    component: __webpack_require__(95)
+	  },
+	
+	});
+	
+	router.map({
+	
 	  '/users': {
 	    component: __webpack_require__(86)
 	  },
 	
 	  '/users/login': {
 	    component: __webpack_require__(89)
-	  },
-	
-	  '/': {
-	    component: __webpack_require__(92)
-	  },
-	  '*': {
-	    component: __webpack_require__(95)
 	  },
 	
 	});
@@ -13188,6 +13192,7 @@
 /* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(98)
 	module.exports = __webpack_require__(77)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13624,7 +13629,7 @@
 /* 85 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n  <h1>{{msg}}</h1>\n  <a v-link=\"{ path: '/users' }\"> User Root</a>\n  <a v-link=\"{ path: '/notfound' }\"> 404 </a>\n  <a v-link=\"{ path: '/users/login' }\"> Login Page </a>\n  <router-view></router-view>\n</div>";
+	module.exports = "<div>\n  <h1>{{msg}}</h1>\n  <a v-link=\"{ path: '/users' }\"> User Root</a>\n  <a v-link=\"{ path: '/notfound' }\"> 404 </a>\n  <a v-link=\"{ path: '/users/login' }\"> Login Page </a>\n  <router-view class=\"view\" transition=\"test\" transition-mode=\"out-in\" keep-alive></router-view>\n</div>";
 
 /***/ },
 /* 86 */
@@ -13801,6 +13806,46 @@
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container\">\n    <h2 class=\"red\">{{msg}}</h2>\n  </div>";
+
+/***/ },
+/* 98 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(99);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(82)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2f38146b!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./app.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-2f38146b!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./app.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(81)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".view {\n  -webkit-transition: all .5s ease;\n  transition: all .5s ease;\n}\n.test-enter, .test-leave {\n  opacity: 0;\n  -webkit-transform: translate3d(10px, 0, 0);\n          transform: translate3d(10px, 0, 0);\n}\n.v-link-active {\n  color: red;\n}\n[v-cloak] {\n  display: none;\n}", ""]);
+	
+	// exports
+
 
 /***/ }
 /******/ ]);

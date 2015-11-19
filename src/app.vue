@@ -1,7 +1,10 @@
 <template>
 <div>
   <h1>{{msg}}</h1>
-  <comp-a></comp-a>
+  <a v-link="{ path: '/users' }"> User Root</a>
+  <a v-link="{ path: '/notfound' }"> 404 </a>
+  <a v-link="{ path: '/users/login' }"> Login Page </a>
+  <router-view></router-view>
 </div>
 </template>
 

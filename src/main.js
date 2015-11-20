@@ -1,18 +1,12 @@
 var Vue = require('vue')
 var VueRouter = require('vue-router');
+var VueResource = require('vue-resource');
 var App = require('./app.vue')
 
-/*
-var app = new Vue({
-  el: 'body',
-  components: {
-    app: App
-  }
-})
-*/
+Vue.use(VueRouter);
+Vue.use(VueResource);
 
-Vue.use(VueRouter)
-var router = new VueRouter()
+var router = new VueRouter();
 
 router.map({
 

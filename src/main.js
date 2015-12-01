@@ -1,3 +1,10 @@
+var $ = require('jquery');
+
+window.$ = $;
+window.jQuery = $;
+
+require('bootstrap');
+
 var Vue = require('vue')
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
@@ -31,6 +38,6 @@ router.map({
 
 });
 
-router.start(App, 'body');
+router.start(App, 'app');
 
 window.router = router;

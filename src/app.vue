@@ -16,10 +16,7 @@
 
 <template>
 <div>
-  <h1>{{msg}}</h1>
-  <a v-link="{ path: '/users' }"> User Root</a>
-  <a v-link="{ path: '/notfound' }"> 404 </a>
-  <a v-link="{ path: '/users/login' }"> Login Page </a>
+  <nav></nav>
   <router-view class="view" transition="test" transition-mode="out-in" keep-alive></router-view>
 </div>
 </template>
@@ -32,7 +29,7 @@ module.exports = {
     };
   },
   components: {
-      'comp-a': require('./components/a.vue')
+      'nav': require('./components/nav.vue')
   }
 };
 
